@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Controller home boards
-class BoardController < ApplicationController
+class BoardsController < ApplicationController
   def index; end
 
   def show; end
