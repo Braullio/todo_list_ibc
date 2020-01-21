@@ -1,1 +1,140 @@
 @import "bootstrap";
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: .5rem;
+}
+
+.header{
+  display: inline-block;
+  line-height: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  width: 100%;
+}
+
+.box {
+  background-color: #0079bf;
+  width: 190px;
+  height: 100px;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.box:hover {
+  background-color: #01649e;
+}
+
+.box.success {
+  background-color: #228b22 !important;
+}
+
+.box.success:hover {
+  background-color: #1d751d !important;
+}
+
+.box-header {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.box-header.success {
+  margin-left: 25px !important;
+  margin-top: 35px !important;
+}
+
+.bg-blue {
+  background-color: #007bff;
+}
+
+.bord-nav {
+  position: relative;
+  display: block;
+  margin-top: .5rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  height: 40px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.bord-header {
+  font-size: 20px;
+  margin-right: 1rem;
+  margin-top: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.bord-lists {
+  display: flex;
+  margin-top: .5rem;
+}
+
+.list_container {
+  width: 250px;
+  height: 100%;
+  margin: 0 15px;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 16),
+    0 3px 6px rgba(0, 0, 0, 23);
+  background-color: white;
+}
+
+ul {
+  width: 100%;
+  height: 100%;
+  max-height: 65vh;
+  min-height: 50px;
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  overflow: auto;
+}
+
+li {
+  padding: 10px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-bottom: 3px;
+  color: black;
+  border: 1px solid #007bff;
+}
+
+.new-card {
+  padding: 10px 20px;
+  width: 100%;
+  margin-top: 10px;
+  color: white;
+  background-color: rgb(95, 95, 95);
+}
+.new-card:hover {
+  background-color: rgb(68, 68, 68);
+}
+
+li:nth-child(even) {
+  background-color: rgb(255, 255, 255);
+}
+
+li:nth-child(odd) {
+  background-color: rgb(173, 216, 230);
+}
+
+h3 {
+  color: black;
+  padding: 15px 20px;
+}
