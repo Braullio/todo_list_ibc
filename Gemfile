@@ -27,10 +27,15 @@ gem 'i18n', '~> 1.7.0'
 # Bootstrap
 gem 'bootstrap', '>= 4.3.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+# A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker', '~> 1.6', '>= 1.6.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # TDD
+  gem 'rspec-rails', '3.8'
+  gem 'capybara', '~> 3.8'
 end
 
 group :development do
@@ -44,10 +49,10 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # TDD
+  gem 'webdrivers', '~> 3.0'
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
