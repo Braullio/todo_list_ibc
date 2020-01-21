@@ -29,6 +29,8 @@ gem 'bootstrap', '>= 4.3.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # A library for generating fake data such as names, addresses, and phone numbers.
 gem 'faker', '~> 1.6', '>= 1.6.6'
+# Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
