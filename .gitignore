@@ -31,3 +31,6 @@
 
 # It documents the final current state of the database schema
 db/schema.rb
+
+# Ignore Vicidial key for credentials.
+/config/application.yml
