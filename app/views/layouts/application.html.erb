@@ -8,8 +8,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
+  <body class="<%= @bg %>">
     <%= render 'partial/messages' %>
+    <%= render 'partial/board' %>
     <%= yield %>
   </body>
 </html>
