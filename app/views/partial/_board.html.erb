@@ -1,0 +1,33 @@
+<div class="modal fade" id="modal_board" tabindex="-1" role="dialog" aria-labelledby="modal_board" aria-hidden="true">
+  <div class="modal-dialog modal-ml" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <%= t 'messages.project.add', value: (t 'controller.board').downcase %>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_tag({controller: "boards", action: @action }, method: @method, id: 'form_board') do %>
+          <div class="form-group">
+            <small><%= t "field.title", value: (t 'controller.board') %></small>
+            <%= text_field_tag :title , @title, type: 'text', class: 'form-control' , autocomplete: :off, required: true %>
+          </div>
+          <div class="form-group">
+            <small><%= t "field.description", value: (t 'controller.board') %></small>
+            <%= text_area_tag :description , @description , rows: 2, cols: 50, maxlength: 75 , class: 'form-control' %>
+          </div>
+            <span><%= button_tag (t 'field.save'), class: "btn btn-block btn-success" %></span>
+        <% end %>
+        <% if @action == "update" %>
+          <%= form_tag({controller: "boards", action: "destroy" }, method: "delete") do %>
+            <%= hidden_field_tag "id", @board.id %>
+            <%= button_tag (t 'field.del'), class: "btn btn-danger btn-block mt-1" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
