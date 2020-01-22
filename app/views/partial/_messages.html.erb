@@ -1,10 +1,10 @@
-<div class="container position-absolute fixed-top up-and-down">
+<div class="container-fluid position-absolute fixed-top up-and-down">
 	<div class="row">
 		<div class="col-sm-10 offset-sm-1">
 			<% flash.each do |name, msg| %>
 				<div class='alert alert-<%= "#{name}" %>'>
-					<a href="#" class="close" data-dismiss="alert">&#215;</a>
-					<%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+					<%= content_tag :div, 'X', class: 'close', data: {dismiss: 'alert'} %>
+					<%= content_tag :div, msg, id: "flash_#{name}" if msg.is_a?(String) %>
 				</div>
 			<% end %>
 		</div>
@@ -12,5 +12,5 @@
 </div>
 
 <script type="text/javascript">
-	$(".alert").delay(10000).fadeOut();
+	$(".alert").delay(4000).fadeOut();
 </script>
