@@ -1,3 +1,26 @@
 pt:
+  controller:
+    board: "Projeto"
+    step:  "Etapa"
+    task:  "Tarefa"
+  field:
+    del:         "Deletar"
+    description: "Descrição do %{value}"
+    my:          "Meus %{value}s"
+    save:        "Salvar"
+    title:       "Titulo do %{value}"
+  messages:
+    alert:
+      remove: "Tem certeza que quer deletar o %{value} ?"
+    danger:
+      create: "O %{value} não foi criado"
+      remove: "O %{value} não foi removido"
+      update: "O %{value} não foi atualizado"
+    project:
+      add:   "Criar novo %{value}"
+    success:
+      create: "O %{value} foi criado com sucesso"
+      remove: "O %{value} foi removido com sucesso"
+      update: "O %{value} foi atualizado com sucesso"
   project:
     title:  "ToDoList IBC"

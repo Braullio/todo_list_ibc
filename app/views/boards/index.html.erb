@@ -1,13 +1,13 @@
 <div class="container">
-<div class="header">Meus Boards</div>
+<div class="header"><%= t 'field.my', value: (t 'controller.board') %></div>
   
-  <% (1..5).each do |a| %>
+  <% @boards.each do |board| %>
     <div class="box">
-      <div class="box-header">sssssssss</div>
+      <%= link_to board.title, board_path(board), class:"flex success" %>
     </div>
   <% end %>
   
   <div class="box success">
-      <div class="box-header success">Criar novo quadro</div>
-    </div>
+    <%= link_to (t 'messages.project.add', value: (t 'controller.board')), boards_path, class:"flex success", data: {toggle: "modal", target: "#modal_board"} %>
+  </div>
 </div>

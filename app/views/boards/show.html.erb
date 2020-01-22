@@ -1,0 +1,50 @@
+<div class="bord-nav">
+    <div class="left bord-header"><%= @board.title %></div>
+    <div class="left bord-header"><%= @board.description %></div>
+  <div class="right">
+    <a data-toggle="modal" data-target="#modal_board" class="btn btn-light"><i class="fa fa-cog"></i></a>
+    <%= link_to root_path , class: "btn btn-danger" do %><i class="fas fa-door-open"></i><% end %>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="bord-lists">
+  <div class="list_container">
+    <h3>List A</h3>
+    <ul id="ul01" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <li id="li1a" draggable="true" ondragstart="drag(event)">Item 1 A</li>
+      <li id="li2a" draggable="true" ondragstart="drag(event)">Item 2 A</li>
+      <li id="li3a" draggable="true" ondragstart="drag(event)">Item 3 A</li>
+      <li id="li4a" draggable="true" ondragstart="drag(event)">Item 4 A</li>
+      <li id="li5a" draggable="true" ondragstart="drag(event)">Item 5 A</li>
+      <li id="li6a" draggable="true" ondragstart="drag(event)">Item 6 A</li>
+      <li id="li7a" draggable="true" ondragstart="drag(event)">Item 7 A</li>
+    </ul>
+    <div class="new-card">Novo item</div>
+  </div>
+
+  <div class="list_container"> 
+    <h3>List B</h3>
+    <ul id="ul02" ondrop="drop(event)"  ondragover="allowDrop(event)">
+      <li id="li1b" draggable="true" ondragstart="drag(event)">Item 1 B</li>
+      <li id="li2b" draggable="true" ondragstart="drag(event)">Item 2 B</li>
+      <li id="li3b" draggable="true" ondragstart="drag(event)">Item 3 B</li>
+    </ul>
+    <div class="new-card">Novo item</div>
+  </div>
+
+  <div class="list_container"> 
+    <h3>List C</h3>
+    <ul id="ul03" ondrop="drop(event)"  ondragover="allowDrop(event)">
+      <li id="li1c" draggable="true" ondragstart="drag(event)">Item 1 C</li>
+      <li id="li2c" draggable="true" ondragstart="drag(event)">Item 2 C</li>
+      <li id="li3c" draggable="true" ondragstart="drag(event)">Item 3 C</li>
+    </ul>
+    <div class="new-card">Novo item</div>
+  </div>
+</div>
+
