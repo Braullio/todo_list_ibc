@@ -2,13 +2,14 @@ pt:
   controller:
     board: "Projeto"
     list:  "Etapa"
-    task:  "Tarefa"
+    card:  "Tarefa"
   field:
     del:         "Deletar"
     description: "Descrição do %{value}"
+    list:        "Lista da %{value}"
     my:          "Meus %{value}s"
     save:        "Salvar"
-    title:       "Titulo do %{value}"
+    title:       "Titulo da %{value}"
   messages:
     alert:
       remove: "Tem certeza que quer deletar o %{value} ?"
