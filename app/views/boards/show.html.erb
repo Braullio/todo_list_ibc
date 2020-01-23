@@ -1,5 +1,8 @@
 <%= render 'partial/list' %>
+<%= render 'partial/card' %>
+<%= render 'partial/card_new' %>
 <%= javascript_include_tag "modal_list_autocomplete" %>
+<%= javascript_include_tag "modal_card_autocomplete" %>
 
 <div class="bord-nav">
   <div class="left bord-header"><%= @board.title %></div>
@@ -9,59 +12,30 @@
     <%= link_to root_path , class: "btn btn-danger" do %><i class="fas fa-door-open"></i><% end %>
   </div>
 </div>
-
 <div class="bord-lists">
-
-<% @all_lists_for_board.each do |list| %>
-
-  <div class="list_container">
-    <small class="pad-list-header"><%= list.title %></small>
-    <a data-toggle="modal" data-target="#modal_list" data-list-id="<%= list.id %>" data-list-title="<%= list.title %>" data-board-id="<%= @board.id %>" class="btn btn-light right"><i class="fa fa-cog"></i></a>
-    <div class="new-card">Novo item</div>
-  </div>
-
-<% end %>
+  <% @all_lists_for_board.each_with_index do |list, list_index| %>
+    <% @list = list %>
+    <% all_cards_for_lists %>
+    <div class="list_container">
+      <small class="pad-list-header"><%= list.title %></small>
+      <a data-toggle="modal" data-target="#modal_list" data-list-id="<%= list.id %>" data-list-title="<%= list.title %>" 
+        data-board-id="<%= @board.id %>" class="btn btn-light right"><i class="fa fa-cog"></i></a>
+      <ul id="ul<%= list_index %>" list="<%= @list.id %>" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <% @all_cards.each_with_index do |card, card_index| %>
+            <li id="ul<%= list_index %>li<%= list_index %>" name="<%= @list.id %>" card="<%= card.id %>" 
+            draggable="true" ondragstart="drag(event)" data-toggle="modal" href="#modal_card" data-target="#modal_card" 
+            data-list-id="<%= list.id %>" data-card-id="<%= card.id %>" data-card-title="<%= card.title %>" 
+            data-card-description="<%= card.description %>">
+              <%= card.title %>
+            </li>
+        <%end%>
+      </ul>
+      <div class="new-card" data-toggle="modal" data-list-id="<%= list.id %>" data-target="#modal_card_new">Novo item</div>
+    </div>
+  <% end %>
   <div class="list_container">
     <small class="pad-list-header"><%= (t 'messages.project.add', value: (t 'controller.list').downcase) %></small>
     <%= text_field_tag :list_new , nil, type: 'text', maxlength: 18, class: 'form-control new-list' , autocomplete: :off, required: true %>
     <%= hidden_field_tag :board_id, @board.id %>
   </div>
-
-
-<!--
-  <div class="list_container">
-    <small class="pad-list-header">List A</small>
-    <ul id="ul01" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <li id="li1a" draggable="true" ondragstart="drag(event)">Item 1 A</li>
-      <li id="li2a" draggable="true" ondragstart="drag(event)">Item 2 A</li>
-      <li id="li3a" draggable="true" ondragstart="drag(event)">Item 3 A</li>
-      <li id="li4a" draggable="true" ondragstart="drag(event)">Item 4 A</li>
-      <li id="li5a" draggable="true" ondragstart="drag(event)">Item 5 A</li>
-      <li id="li6a" draggable="true" ondragstart="drag(event)">Item 6 A</li>
-      <li id="li7a" draggable="true" ondragstart="drag(event)">Item 7 A</li>
-    </ul>
-    <div class="new-card">Novo item</div>
-  </div>
-
-  <div class="list_container"> 
-    <small class="pad-list-header">List B</small>
-    <ul id="ul02" ondrop="drop(event)"  ondragover="allowDrop(event)">
-      <li id="li1b" draggable="true" ondragstart="drag(event)">Item 1 B</li>
-      <li id="li2b" draggable="true" ondragstart="drag(event)">Item 2 B</li>
-      <li id="li3b" draggable="true" ondragstart="drag(event)">Item 3 B</li>
-    </ul>
-    <div class="new-card">Novo item</div>
-  </div>
-
-  <div class="list_container"> 
-    <small class="pad-list-header">List C</small>
-    <ul id="ul03" ondrop="drop(event)"  ondragover="allowDrop(event)">
-      <li id="li1c" draggable="true" ondragstart="drag(event)">Item 1 C</li>
-      <li id="li2c" draggable="true" ondragstart="drag(event)">Item 2 C</li>
-      <li id="li3c" draggable="true" ondragstart="drag(event)">Item 3 C</li>
-    </ul>
-    <div class="new-card">Novo item</div>
-  </div>
 </div>
-
--->
