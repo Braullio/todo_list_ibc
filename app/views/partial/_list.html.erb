@@ -1,0 +1,28 @@
+<div class="modal fade" id="modal_list" tabindex="-1" role="dialog" aria-labelledby="modal_list" aria-hidden="true">
+  <div class="modal-dialog modal-ml" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <%= t 'messages.project.add', value: (t 'controller.list').downcase %>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_tag({controller: "lists", action: 'update' }, method: 'patch', id: 'form_list') do %>
+          <div class="form-group">
+            <small><%= t "field.title", value: (t 'controller.list') %></small>
+            <%= text_field_tag :list_title , nil, type: 'text', class: 'form-control', autocomplete: :off, required: true %>
+            <%= hidden_field_tag :list_id %>
+          </div>
+            <span><%= button_tag (t 'field.save'), class: "btn btn-block btn-success" %></span>
+        <% end %>
+        <%= form_tag({controller: "lists", action: "destroy" }, method: "delete") do %>
+          <%= hidden_field_tag :list_id_del %>
+          <%= button_tag (t 'field.del'), class: "btn btn-danger btn-block mt-1" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
