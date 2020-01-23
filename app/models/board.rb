@@ -8,5 +8,7 @@
 #  tite           :VARCHAR(255)   not null
 #  description    :TEXT
 class Board < ApplicationRecord
+  has_many :lists, dependent: :destroy
+
   validates :title, presence: true
 end
