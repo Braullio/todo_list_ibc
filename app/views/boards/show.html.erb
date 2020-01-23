@@ -1,20 +1,36 @@
+<%= render 'partial/list' %>
+<%= javascript_include_tag "modal_list_autocomplete" %>
+
 <div class="bord-nav">
-    <div class="left bord-header"><%= @board.title %></div>
-    <div class="left bord-header"><%= @board.description %></div>
+  <div class="left bord-header"><%= @board.title %></div>
+  <div class="left bord-header"><%= @board.description %></div>
   <div class="right">
     <a data-toggle="modal" data-target="#modal_board" class="btn btn-light"><i class="fa fa-cog"></i></a>
     <%= link_to root_path , class: "btn btn-danger" do %><i class="fas fa-door-open"></i><% end %>
   </div>
 </div>
 
-
-
-
-
-
 <div class="bord-lists">
+
+<% @all_lists_for_board.each do |list| %>
+
   <div class="list_container">
-    <h3>List A</h3>
+    <small class="pad-list-header"><%= list.title %></small>
+    <a data-toggle="modal" data-target="#modal_list" data-list-id="<%= list.id %>" data-list-title="<%= list.title %>" data-board-id="<%= @board.id %>" class="btn btn-light right"><i class="fa fa-cog"></i></a>
+    <div class="new-card">Novo item</div>
+  </div>
+
+<% end %>
+  <div class="list_container">
+    <small class="pad-list-header"><%= (t 'messages.project.add', value: (t 'controller.list').downcase) %></small>
+    <%= text_field_tag :list_new , nil, type: 'text', maxlength: 18, class: 'form-control new-list' , autocomplete: :off, required: true %>
+    <%= hidden_field_tag :board_id, @board.id %>
+  </div>
+
+
+<!--
+  <div class="list_container">
+    <small class="pad-list-header">List A</small>
     <ul id="ul01" ondrop="drop(event)" ondragover="allowDrop(event)">
       <li id="li1a" draggable="true" ondragstart="drag(event)">Item 1 A</li>
       <li id="li2a" draggable="true" ondragstart="drag(event)">Item 2 A</li>
@@ -28,7 +44,7 @@
   </div>
 
   <div class="list_container"> 
-    <h3>List B</h3>
+    <small class="pad-list-header">List B</small>
     <ul id="ul02" ondrop="drop(event)"  ondragover="allowDrop(event)">
       <li id="li1b" draggable="true" ondragstart="drag(event)">Item 1 B</li>
       <li id="li2b" draggable="true" ondragstart="drag(event)">Item 2 B</li>
@@ -38,7 +54,7 @@
   </div>
 
   <div class="list_container"> 
-    <h3>List C</h3>
+    <small class="pad-list-header">List C</small>
     <ul id="ul03" ondrop="drop(event)"  ondragover="allowDrop(event)">
       <li id="li1c" draggable="true" ondragstart="drag(event)">Item 1 C</li>
       <li id="li2c" draggable="true" ondragstart="drag(event)">Item 2 C</li>
@@ -48,3 +64,4 @@
   </div>
 </div>
 
+-->

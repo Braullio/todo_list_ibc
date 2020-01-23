@@ -107,7 +107,7 @@ a:hover {
 }
 
 .bord-lists {
-  display: flex;
+  display: -webkit-inline-flex;
   margin-top: .5rem;
 }
 
@@ -117,7 +117,7 @@ a:hover {
   margin: 0 15px;
   border-radius: 4px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 16),
-    0 3px 6px rgba(0, 0, 0, 23);
+  0 3px 6px rgba(0, 0, 0, 23);
   background-color: white;
 }
 
@@ -139,7 +139,7 @@ li {
   width: 90%;
   margin-bottom: 3px;
   color: black;
-  border: 1px solid #007bff;
+  border: 1px solid #c5c5c5;
 }
 
 .new-card {
@@ -161,9 +161,16 @@ li:nth-child(odd) {
   background-color: rgb(173, 216, 230);
 }
 
-h3 {
+h5 {
   color: black;
-  padding: 15px 20px;
+  padding: 5px 11px;
+}
+
+.pad-list-header {
+  color: black;
+  padding: 5px 11px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .bord-header {
@@ -172,6 +179,16 @@ h3 {
   margin-top: 5px;
   color: white;
   font-weight: bold;
+}
+
+.new-list {
+  padding: 10px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-bottom: 12px;
+  color: black;
+  border: 1px solid #c5c5c5;
 }
 
 .bord-header:nth-child(1) {

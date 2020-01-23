@@ -1,7 +1,7 @@
 pt:
   controller:
     board: "Projeto"
-    step:  "Etapa"
+    list:  "Etapa"
     task:  "Tarefa"
   field:
     del:         "Deletar"
