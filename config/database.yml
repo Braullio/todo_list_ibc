@@ -18,8 +18,10 @@ test:
 production:
   <<: *default
   database: todo_list_ibc_production
-  username: todo_list_ibc
-  password: <%= ENV['TODO_LIST_IBC_DATABASE_PASSWORD'] %>
+  username: <%= ENV["DB_PROD_USER"] %>
+  password: <%= ENV["DB_PROD_PASS"] %>
+  host: <%= ENV["DB_PROD_HOST"] %>
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
 
 # Create file /config/application.yml with the data:
 # DB_USER: "user_database"
@@ -28,3 +30,4 @@ production:
 # DB_PROD_USER: "user_database"
 # DB_PROD_PASS: "password_databases"
 # DB_PROD_HOST: "ip_vicidial_database"
+# SECRET_KEY_BASE: "chave gerada com o comando 'RAILS_ENV=production rake secret'"
