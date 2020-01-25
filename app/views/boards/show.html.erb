@@ -35,7 +35,7 @@
   <% end %>
   <div class="list_container">
     <small class="pad-list-header"><%= (t 'messages.project.add', value: (t 'controller.list').downcase) %></small>
-    <%= text_field_tag :list_new , nil, type: 'text', maxlength: 18, class: 'form-control new-list' , autocomplete: :off, required: true %>
+    <%= text_field_tag :list_new , nil, type: 'text', maxlength: 16, class: 'form-control new-list' , autocomplete: :off, required: true %>
     <%= hidden_field_tag :board_id, @board.id %>
   </div>
 </div>
