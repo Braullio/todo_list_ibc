@@ -9,10 +9,13 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.paths << Emoji.images_path
 # Add Yarn node_modules folder to the asset load path.
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
-Rails.application.config.assets.precompile += %w[drag_and_drop_lists.js
+Rails.application.config.assets.precompile += %w[application.css
+                                                 custom.css.scss
+                                                 drag_and_drop_lists.js
                                                  new_list.js
                                                  modal_list_autocomplete.js
                                                  modal_card_autocomplete.js]
+Rails.application.config.assets.compile = true
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
