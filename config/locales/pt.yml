@@ -25,3 +25,4 @@ pt:
       update: "O %{value} foi atualizado com sucesso"
   project:
     title:  "ToDoList IBC"
+    home:  "Pagina inicial"
