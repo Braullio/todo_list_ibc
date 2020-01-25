@@ -2,13 +2,13 @@
 
 # == Schema Information
 #
-# Table name: lists
+# Table name: cards
 #
 #  id             :BIGINT(20)     not null, primary key
 #  tite           :VARCHAR(255)   not null
-class List < ApplicationRecord
-  belongs_to :board
-  has_many :cards, dependent: :destroy
+#  description    :TEXT
+class Card < ApplicationRecord
+  belongs_to :list
 
   validates :title, presence: true
 end
