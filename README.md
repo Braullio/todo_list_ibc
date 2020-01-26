@@ -61,5 +61,5 @@ $ rails spec
   DB_PROD_USER: "user_database"
   DB_PROD_PASS: "password_databases"
   DB_PROD_HOST: "ip_vicidial_database"
-  SECRET_KEY_BASE: "chave gerada com o comando 'RAILS_ENV=production rake secret'"
+  SECRET_KEY_BASE: "key generated with the command 'RAILS_ENV=production rake secret'"
   
