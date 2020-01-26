@@ -26,8 +26,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# Bundler records the exact versions that were installed
-/Gemfile.lock
 
 # It documents the final current state of the database schema
 db/schema.rb
