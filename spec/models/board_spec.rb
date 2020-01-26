@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
-require 'faker'
 
 RSpec.describe Board, type: :model do
-  subject { Board.new }
+  before(:all) do
+    @board = create(:board)
+  end
 
   it 'is valid with valid attributes' do
-    subject.title = Faker::Lorem.word
-    subject.description = Faker::Lorem.sentence
-    expect(subject.save).to eq(true)
+    expect(@board).to be_valid
   end
 
   it 'is not valid without a title' do
-    expect(subject.save).to eq(false)
+    board1 = build(:board, title: nil)
+    expect(board1).to_not be_valid
   end
 end
