@@ -7,7 +7,8 @@ require File.expand_path('../../config/environment', __FILE__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 require 'capybara/rspec'
-require 'support/factory_bot'
+
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation
