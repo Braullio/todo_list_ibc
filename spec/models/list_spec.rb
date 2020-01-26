@@ -1,22 +1,23 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe List, type: :model do
-  let(:board) { Board.create(title: Faker::FunnyName.name) }
-  subject     { List.new }
+  before(:all) do
+    @list = create(:list)
+  end
 
   it 'is valid with valid attributes' do
-    subject.title = Faker::Lorem.word
-    subject.board_id = board.id
-    expect(subject.save).to eq(true)
+    expect(@list).to be_valid
   end
 
-  it 'is board_id nos present in attributes' do
-    subject.title = Faker::Lorem.word
-    expect(subject.save).to eq(false)
+  it 'is not valid without a board_id' do
+    list = build(:list, board_id: nil)
+    expect(list).to_not be_valid
   end
 
-  it 'is title nos present in attributes' do
-    List.new(title: nil, board_id: board.id)
-    expect(List.count).to eq(0)
+  it 'is not valid without a title' do
+    list = build(:list, title: nil)
+    expect(list).to_not be_valid
   end
 end
