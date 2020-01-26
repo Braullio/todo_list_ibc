@@ -39,7 +39,7 @@ class ListsController < ApplicationController
 
   def list_params
     @list_send = params.permit(:list_title)
-    @list_send["title"] = @list_send.delete("list_title")
+    @list_send['title'] = @list_send.delete('list_title')
   end
 
   def list_params_json
