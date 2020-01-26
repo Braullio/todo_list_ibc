@@ -38,6 +38,7 @@ group :development, :test do
   # TDD
   gem 'rspec-rails', '3.8'
   gem 'capybara', '~> 3.8'
+  gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
 end
 
 group :development do
