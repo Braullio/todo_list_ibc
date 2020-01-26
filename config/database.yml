@@ -1,5 +1,4 @@
 default: &default
-  adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV["DB_USER"] %>
@@ -8,14 +7,17 @@ default: &default
   socket: /var/run/mysqld/mysqld.sock
 
 development:
+  adapter: mysql2
   <<: *default
   database: todo_list_ibc_development
 
 test:
+  adapter: mysql2
   <<: *default
   database: todo_list_ibc_test
 
 production:
+  adapter: postgresql
   <<: *default
   database: todo_list_ibc_production
   username: <%= ENV["DB_PROD_USER"] %>
