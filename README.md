@@ -15,7 +15,7 @@
   - RDS Aurora
   - Elastic Beanstalk
  
-#### Pré-requisitos
+#### Prerequisites
 
 * Ruby 2.6.5
 * Bundler
