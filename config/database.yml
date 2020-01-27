@@ -1,5 +1,4 @@
 default: &default
-  adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV["DB_USER"] %>
@@ -9,25 +8,22 @@ default: &default
 
 development:
   <<: *default
+  adapter: mysql2
   database: todo_list_ibc_development
 
 test:
   <<: *default
+  adapter: mysql2
   database: todo_list_ibc_test
 
 production:
   <<: *default
+  adapter: postgresql
   database: todo_list_ibc_production
-  username: <%= ENV["DB_PROD_USER"] %>
-  password: <%= ENV["DB_PROD_PASS"] %>
-  host: <%= ENV["DB_PROD_HOST"] %>
-  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+  username: todo_list_ibc
+  password: <%= ENV['TUDO_LIST_IBC_DATABASE_PASSWORD'] %>
 
 # Create file /config/application.yml with the data:
 # DB_USER: "user_database"
 # DB_PASS: "password_databases"
 # DB_HOST: "ip_vicidial_database"
-# DB_PROD_USER: "user_database"
-# DB_PROD_PASS: "password_databases"
-# DB_PROD_HOST: "ip_vicidial_database"
-# SECRET_KEY_BASE: "chave gerada com o comando 'RAILS_ENV=production rake secret'"

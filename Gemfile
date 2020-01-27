@@ -6,8 +6,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -33,12 +31,18 @@ gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
+  # Use mysql as the database for Active Record
+  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # TDD
   gem 'rspec-rails', '3.8'
   gem 'capybara', '~> 3.8'
   gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :development do
