@@ -1,8 +1,8 @@
 branch-defaults:
   master:
-    environment: IbcApplication-env
+    environment: IbcApplication
 environment-defaults:
-  IbcApplication-env:
+  IbcApplication:
     branch: null
     repository: null
 global:
@@ -15,6 +15,6 @@ global:
   instance_profile: null
   platform_name: null
   platform_version: null
-  profile: eb-cli
+  profile: demo
   sc: git
   workspace_type: Application
