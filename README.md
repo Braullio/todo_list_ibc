@@ -52,14 +52,6 @@ $ rails s
 $ rails spec
 ```
 
-## Deployment
-  To run correctly, you must create the /config/application.yml file with the data:
-  ```
-  DB_USER: "user_database"
-  DB_PASS: "password_databases"
-  DB_HOST: "ip_vicidial_database"
-  DB_PROD_USER: "user_database"
-  DB_PROD_PASS: "password_databases"
-  DB_PROD_HOST: "ip_vicidial_database"
-  SECRET_KEY_BASE: "key generated with the command 'RAILS_ENV=production rake secret'"
+## Heroku
+  https://ibc-todolist.herokuapp.com/
   
