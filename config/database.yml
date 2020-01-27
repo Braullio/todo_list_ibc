@@ -24,7 +24,3 @@ production:
 # DB_USER: "user_database"
 # DB_PASS: "password_databases"
 # DB_HOST: "ip_vicidial_database"
-# DB_PROD_USER: "user_database"
-# DB_PROD_PASS: "password_databases"
-# DB_PROD_HOST: "ip_vicidial_database"
-# SECRET_KEY_BASE: "chave gerada com o comando 'RAILS_ENV=production rake secret'"
