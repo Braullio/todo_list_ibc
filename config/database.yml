@@ -19,15 +19,11 @@ test:
 production:
   adapter: postgresql
   <<: *default
-  database: free_do_production
-  username: free_do
-  password: <%= ENV['FREE_DO_DATABASE_PASSWORD'] %>
+  database: todo_list_ibc_production
+  username: todo_list_ibc
+  password: <%= ENV['TUDO_LIST_IBC_DATABASE_PASSWORD'] %>
 
 # Create file /config/application.yml with the data:
 # DB_USER: "user_database"
 # DB_PASS: "password_databases"
 # DB_HOST: "ip_vicidial_database"
-# DB_PROD_USER: "user_database"
-# DB_PROD_PASS: "password_databases"
-# DB_PROD_HOST: "ip_vicidial_database"
-# SECRET_KEY_BASE: "chave gerada com o comando 'RAILS_ENV=production rake secret'"
