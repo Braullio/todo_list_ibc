@@ -22,7 +22,7 @@
         data-board-id="<%= @board.id %>" class="btn btn-light right"><i class="fa fa-cog"></i></a>
       <ul id="ul<%= list_index %>" list="<%= @list.id %>" ondrop="drop(event)" ondragover="allowDrop(event)">
         <% @all_cards.each_with_index do |card, card_index| %>
-            <li id="ul<%= list_index %>li<%= list_index %>" name="<%= @list.id %>" card="<%= card.id %>" 
+            <li id="ul<%= list_index %>li<%= card_index %>" name="<%= @list.id %>" card="<%= card.id %>" 
             draggable="true" ondragstart="drag(event)" data-toggle="modal" href="#modal_card" data-target="#modal_card" 
             data-list-id="<%= list.id %>" data-card-id="<%= card.id %>" data-card-title="<%= card.title %>" 
             data-card-description="<%= card.description %>">
