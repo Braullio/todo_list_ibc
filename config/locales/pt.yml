@@ -14,15 +14,15 @@ pt:
     alert:
       remove: "Tem certeza que quer deletar o %{value} ?"
     danger:
-      create: "O %{value} não foi criado"
-      remove: "O %{value} não foi removido"
-      update: "O %{value} não foi atualizado"
+      create: "%{value} não foi criad%{type}"
+      remove: "%{value} não foi removid%{type}"
+      update: "%{value} não foi atualizad%{type}"
     project:
       add:   "Criar novo %{value}"
     success:
-      create: "O %{value} foi criado com sucesso"
-      remove: "O %{value} foi removido com sucesso"
-      update: "O %{value} foi atualizado com sucesso"
+      create: "%{value} foi criad%{type} com sucesso"
+      remove: "%{value} foi removid%{type}"
+      update: "%{value} foi atualizad%{type} com sucesso"
   project:
     title:  "ToDoList IBC"
     home:  "Pagina inicial"

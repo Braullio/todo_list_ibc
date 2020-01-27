@@ -18,7 +18,8 @@ class ApplicationController < ActionController::Base
 
   def message_redirect_type(status, type, path_redirect, controller)
     flash[status.to_sym] = (t "messages.#{status}.#{type}",
-                              value: (t "controller.#{controller}"))
+                              value: (t "controller.#{controller}"),
+                              type: (t "controller.#{controller}")[-1] )
     if path_redirect == 'back'
       redirect_to_back
     else
